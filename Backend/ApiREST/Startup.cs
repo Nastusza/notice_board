@@ -1,4 +1,5 @@
-﻿using Infrastructure;
+﻿using ApiREST.Middlewares;
+using Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -43,6 +44,7 @@ namespace ApiREST
                 app.UseHsts();
             }
 
+            app.UseMiddleware<ExceptionMiddleware>();
             app.UseHttpsRedirection();
             app.UseMvc();
         }
