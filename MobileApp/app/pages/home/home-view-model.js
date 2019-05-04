@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var observable_1 = require("tns-core-modules/data/observable");
+function HomeViewModel() {
+    var viewModel = observable_1.fromObject({
+        fetching: false,
+        message: '',
+        offers: Array(),
+    });
+    return viewModel;
+}
+module.exports = HomeViewModel;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaG9tZS12aWV3LW1vZGVsLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiaG9tZS12aWV3LW1vZGVsLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsK0RBQXlFO0FBRXpFLFNBQVMsYUFBYTtJQUNsQixJQUFNLFNBQVMsR0FBRyx1QkFBVSxDQUFDO1FBQ3pCLFFBQVEsRUFBRSxLQUFLO1FBQ2YsT0FBTyxFQUFFLEVBQUU7UUFDWCxNQUFNLEVBQUUsS0FBSyxFQUFTO0tBQ3pCLENBQUMsQ0FBQztJQUVILE9BQU8sU0FBUyxDQUFDO0FBQ3JCLENBQUM7QUFFRCxNQUFNLENBQUMsT0FBTyxHQUFHLGFBQWEsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE9mZmVyIH0gZnJvbSAnLi8uLi8uLi9zaGFyZWQvaW50ZXJmYWNlcyc7XG5pbXBvcnQgeyBmcm9tT2JqZWN0LCBFdmVudERhdGEgfSBmcm9tIFwidG5zLWNvcmUtbW9kdWxlcy9kYXRhL29ic2VydmFibGVcIjtcblxuZnVuY3Rpb24gSG9tZVZpZXdNb2RlbCgpIHtcbiAgICBjb25zdCB2aWV3TW9kZWwgPSBmcm9tT2JqZWN0KHtcbiAgICAgICAgZmV0Y2hpbmc6IGZhbHNlLFxuICAgICAgICBtZXNzYWdlOiAnJyxcbiAgICAgICAgb2ZmZXJzOiBBcnJheTxPZmZlcj4oKSxcbiAgICB9KTtcblxuICAgIHJldHVybiB2aWV3TW9kZWw7XG59XG5cbm1vZHVsZS5leHBvcnRzID0gSG9tZVZpZXdNb2RlbDtcbiJdfQ==

@@ -1,0 +1,9 @@
+{
+  "main": "app.js",
+  "android": {
+    "v8Flags": "--expose_gc"
+  },
+  "devDependencies": {
+    "@types/faker": "^4.1.5"
+  }
+}

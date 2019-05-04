@@ -1,0 +1,10 @@
+Button {
+    background-color: darkslateblue;
+    color: aliceblue;
+    font-size: 24;
+}
+
+Label {
+    margin: 10;
+
+}

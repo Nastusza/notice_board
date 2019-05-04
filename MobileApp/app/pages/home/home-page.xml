@@ -1,0 +1,24 @@
+<Page class="page"
+    actionBarHidden="true"
+    loaded="onPageLoaded"
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <StackLayout>
+        <Button text="To User Profile" tap="toUserProfile" />
+
+        <Button text="Save Setting" tap="saveSetting" />
+        <Button text="Read Setting" tap="readSetting" />
+
+        <Button text="{{fetching ? 'FETCHING...' : 'FETCH'}}" tap="onTap" />
+        <Label text="{{message}}"  textWrap="true" visibility="{{ fetching ? 'collapsed' : 'visible' }}"></Label>
+
+        <ListView items="{{ offers }}">
+            <ListView.itemTemplate>
+                <GridLayout columns="auto, *">
+                    <Label text="{{ title }}" col="0"/>
+                    <Label text="{{ description }}" col="1"/>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </StackLayout>
+</Page>
