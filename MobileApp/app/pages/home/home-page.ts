@@ -33,6 +33,10 @@ export function toUserProfile(args: EventData) {
     NavigationService.ToUserProfile();
 }
 
+export function toMap(args: EventData) {
+    NavigationService.ToMap();
+}
+
 function init() {
     vm.fetching = true;
     new OffersService().loadOffers()

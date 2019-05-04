@@ -4,6 +4,7 @@
     xmlns="http://schemas.nativescript.org/tns.xsd">
 
     <StackLayout>
+        <Button text="To Map" tap="toMap" />
         <Button text="To User Profile" tap="toUserProfile" />
 
         <Button text="Save Setting" tap="saveSetting" />
