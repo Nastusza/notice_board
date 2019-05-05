@@ -1,18 +1,17 @@
-import { MapView, Marker, Position } from 'nativescript-google-maps-sdk';
-import { Image } from 'tns-core-modules/ui/image';
+import { Camera, CameraEventData, MapView, Marker, MarkerEventData, Position } from 'nativescript-google-maps-sdk';
 import { EventData, NavigatedData, Page } from 'tns-core-modules/ui/page/page';
 import NavigationService from '~/services/navigation-service';
 import { OffersService } from '~/services/offers-service';
 import { Offer } from '~/shared/interfaces';
 
-var imageSource = require( "image-source" );
+import { MarkerCustom } from './components/marker-custom';
+
 const ViewModel = require("./map-module");
 
-let page: Page = null;
 let vm = new ViewModel();
 
 export function onNavigatingTo(args: NavigatedData) {
-    page = <Page>args.object;
+    const page = <Page>args.object;
     page.bindingContext = vm;
 }
 
@@ -22,15 +21,29 @@ export function navigateHome(args: EventData) {
 
 export function onMapReady(args: EventData) {
     var mapView = <MapView>args.object;
-    init(mapView);
 }
 
-function init(mapView: MapView) {
+export function onMarkerSelect(args: MarkerEventData) {
+    const marker = <Marker>args.marker;
+    const map = <MapView>args.object;
+}
+
+export function onCameraChanged(args: CameraEventData) {
+    const camera = <Camera>args.camera;
+    const map = <MapView>args.object;
+
+    const latMin = map.projection.visibleRegion.bounds.southwest.latitude;
+    const latMax = map.projection.visibleRegion.bounds.northeast.latitude;
+    const lngMin = map.projection.visibleRegion.bounds.southwest.longitude;
+    const lngMax = map.projection.visibleRegion.bounds.northeast.longitude;
+
     vm.fetching = true;
-    new OffersService().loadOffers()
+    map.removeAllMarkers();
+
+    new OffersService().loadOffers(latMin, latMax, lngMin, lngMax)
         .then(
             (result: Array<Offer>) => {
-                result.forEach(r => placeMarker(r, mapView))
+                result.forEach(r => placeMarker(r, map))
                 vm.fetching = false;
             },
             (error) => {
@@ -39,15 +52,11 @@ function init(mapView: MapView) {
 }
 
 function placeMarker(offer: Offer, mapView: MapView) {
-    var marker = new Marker();
+    var marker = new MarkerCustom();
     marker.position = Position.positionFromLatLng(offer.location.lat, offer.location.lng);
     marker.title = offer.title;
     marker.snippet = offer.description;
     // marker.userData = { index : 1};
-
-    let icon = new Image();
-    icon.imageSource = imageSource.fromResource('marker');
-    marker.icon = icon;
 
     mapView.addMarker(marker);
 }

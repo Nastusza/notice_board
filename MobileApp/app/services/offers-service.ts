@@ -6,16 +6,16 @@ export class OffersService {
 
     private _useHttp: boolean = false;
 
-    loadOffers() : Promise<Array<Offer>> {
+    loadOffers(latMin: number, latMax: number, lngMin: number, lngMax: number) : Promise<Array<Offer>> {
         if (this._useHttp) {
-            return this.loadOffersOverHttp();
+            return this.loadOffersOverHttp(latMin, latMax, lngMin, lngMax);
         }
         else {
-            return this.loadFakeOffers();
+            return this.loadFakeOffers(latMin, latMax, lngMin, lngMax);
         }
     }
 
-    private loadOffersOverHttp() : Promise<Array<Offer>> {
+    private loadOffersOverHttp(latMin: number, latMax: number, lngMin: number, lngMax: number) : Promise<Array<Offer>> {
 
         var reqPArams = {
             url: 'https://192.168.1.139:5001/api/offers',
@@ -29,22 +29,22 @@ export class OffersService {
     }
 
 
-    private loadFakeOffers() : Promise<Array<Offer>> {
+    private loadFakeOffers(latMin: number, latMax: number, lngMin: number, lngMax: number) : Promise<Array<Offer>> {
         return new Promise<Array<Offer>>((resolve, reject) => {
             let result = new Array<Offer>();
 
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 5; i++) {
 
                 const randomLat = faker.random.number({
-                    'min': 54.300,
-                    'max': 54.340,
-                    precision: 0.001
+                    'min': latMin,
+                    'max': latMax,
+                    precision: 0.00001
                 });
 
                 const randomLng = faker.random.number({
-                    'min': 18.600,
-                    'max': 18.640,
-                    precision: 0.001
+                    'min': lngMin,
+                    'max': lngMax,
+                    precision: 0.00001
                 });
 
                 result.push({

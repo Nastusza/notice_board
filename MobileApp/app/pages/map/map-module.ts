@@ -7,7 +7,8 @@ function MapViewModel() {
         lat: 54.3158519,
         lng: 18.6240068,
         zoom: 13,
-        padding: 20
+        padding: 20,
+        compassEnabled: true
     });
 
     return viewModel;

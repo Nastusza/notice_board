@@ -15,8 +15,10 @@
                 padding="{{padding}}"
 
                 mapReady="onMapReady"
+                markerSelect="onMarkerSelect"
+                cameraChanged="onCameraChanged"
 
-                compassEnabled="true"
+                compassEnabled="{{compassEnabled}}"
                 indoorLevelPickerEnabled="false"
                 mapToolbarEnabled="true"
                 myLocationButtonEnabled="true"
