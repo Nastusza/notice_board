@@ -11,6 +11,6 @@
         "webpack.config.js": true,
         ".gitignore": true,
         "**/package.json": true,
-        "app/App_Resources": true
+        // "app/App_Resources": true
     }
 }

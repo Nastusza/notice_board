@@ -6,20 +6,7 @@
     <StackLayout>
         <Button text="To Map" tap="toMap" />
         <Button text="To User Profile" tap="toUserProfile" />
-
-        <Button text="Save Setting" tap="saveSetting" />
-        <Button text="Read Setting" tap="readSetting" />
-
-        <Button text="{{fetching ? 'FETCHING...' : 'FETCH'}}" tap="onTap" />
-        <Label text="{{message}}"  textWrap="true" visibility="{{ fetching ? 'collapsed' : 'visible' }}"></Label>
-
-        <ListView items="{{ offers }}">
-            <ListView.itemTemplate>
-                <GridLayout columns="auto, *">
-                    <Label text="{{ title }}" col="0"/>
-                    <Label text="{{ description }}" col="1"/>
-                </GridLayout>
-            </ListView.itemTemplate>
-        </ListView>
+        <Button text="Enable GPS Location" tap="enableGpsLocation" />
+        <Button text="Get GPS Location" tap="getGpsLocation" />
     </StackLayout>
 </Page>
