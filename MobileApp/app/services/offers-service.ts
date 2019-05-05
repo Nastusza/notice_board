@@ -4,7 +4,7 @@ import { Offer } from '~/shared/interfaces';
 
 export class OffersService {
 
-    private _useHttp: boolean = true;
+    private _useHttp: boolean = false;
 
     loadOffers() : Promise<Array<Offer>> {
         if (this._useHttp) {
@@ -34,11 +34,24 @@ export class OffersService {
             let result = new Array<Offer>();
 
             for (let i = 0; i < 20; i++) {
+
+                const randomLat = faker.random.number({
+                    'min': 54.300,
+                    'max': 54.340,
+                    precision: 0.001
+                });
+
+                const randomLng = faker.random.number({
+                    'min': 18.600,
+                    'max': 18.640,
+                    precision: 0.001
+                });
+
                 result.push({
                     date: faker.date.future(),
                     location: {
-                        lat: 20,
-                        lng: 30
+                        lat: randomLat,
+                        lng: randomLng
                     },
                     title: faker.name.lastName(),
                     description: faker.phone.phoneNumber()

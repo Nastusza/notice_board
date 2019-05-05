@@ -1,9 +1,10 @@
-import { Page } from 'tns-core-modules/ui/page/page';
 import { EventData } from 'tns-core-modules/data/observable';
-import { OffersService } from '~/services/offers-service';
-import { Offer } from '~/shared/interfaces';
+import { Page } from 'tns-core-modules/ui/page/page';
 import Settings from '~/services/app-settings-service';
 import NavigationService from '~/services/navigation-service';
+import { OffersService } from '~/services/offers-service';
+import { Offer } from '~/shared/interfaces';
+
 var dialogs = require("tns-core-modules/ui/dialogs");
 const HomeViewModel = require("./home-view-model");
 
