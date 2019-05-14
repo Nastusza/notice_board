@@ -1,24 +1,27 @@
 {
-  "name": "todoaround",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+  "nativescript": {
+    "id": "org.nativescript.noticeboard",
+    "tns-ios": {
+      "version": "5.3.1"
+    },
+    "tns-android": {
+      "version": "5.3.1"
+    }
   },
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "repository": "<fill-your-repository-here>",
   "dependencies": {
-    "react": "16.8.3",
-    "react-native": "0.59.3"
+    "faker": "^4.1.0",
+    "nativescript-geolocation": "^5.0.0",
+    "nativescript-google-maps-sdk": "^2.7.0",
+    "nativescript-theme-core": "~1.0.4",
+    "tns-core-modules": "~5.3.0"
   },
   "devDependencies": {
-    "@babel/core": "7.4.3",
-    "@babel/runtime": "7.4.3",
-    "babel-jest": "24.7.1",
-    "jest": "24.7.1",
-    "metro-react-native-babel-preset": "0.53.1",
-    "react-test-renderer": "16.8.3"
+    "nativescript-dev-typescript": "^0.9.0",
+    "nativescript-dev-webpack": "~0.21.0"
   },
-  "jest": {
-    "preset": "react-native"
-  }
+  "gitHead": "803cec054c44c99eaa59cdc267993e6346f6cb3a",
+  "readme": "NativeScript Application"
 }

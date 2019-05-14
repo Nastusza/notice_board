@@ -1,0 +1,11 @@
+<Page class="page"
+    actionBarHidden="true"
+    navigatingTo="onNavigatingTo"
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <StackLayout>
+        <Label text="USER PROFILE VIEW"></Label>
+        <Button text="Go To Home" tap="navigateHome" />
+        <Button text="Go Back" tap="navigateBack" />
+    </StackLayout>
+</Page>

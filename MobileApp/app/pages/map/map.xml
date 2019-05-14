@@ -1,0 +1,40 @@
+ <Page
+    actionBarHidden="true"
+    navigatingTo="onNavigatingTo"
+    xmlns="http://www.nativescript.org/tns.xsd"
+    xmlns:maps="nativescript-google-maps-sdk">
+
+      <StackLayout>
+            <Button text="Home" tap="navigateHome" />
+
+            <maps:mapView
+                latitude="{{lat}}"
+                longitude="{{lng}}"
+                mapAnimationsEnabled="true"
+                zoom="{{zoom}}"
+                padding="{{padding}}"
+
+                mapReady="onMapReady"
+                markerSelect="onMarkerSelect"
+                cameraChanged="onCameraChanged"
+
+                compassEnabled="{{compassEnabled}}"
+                indoorLevelPickerEnabled="false"
+                mapToolbarEnabled="true"
+                myLocationButtonEnabled="true"
+                rotateGesturesEnabled="true"
+                scrollGesturesEnabled="true"
+                tiltGesturesEnabled="true"
+                zoomControlsEnabled="true"
+                zoomGesturesEnabled="true">
+
+                  <maps:mapView.infoWindowTemplate>
+                        <StackLayout orientation="vertical" width="200" height="80" >
+                              <Label text="{{title}}" className="title" width="125"   />
+                              <Label text="{{snippet}}" className="snippet" width="125"   />
+                        </StackLayout>
+                  </maps:mapView.infoWindowTemplate>
+
+            </maps:mapView>
+      </StackLayout>
+</Page>

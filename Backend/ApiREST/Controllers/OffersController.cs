@@ -33,6 +33,20 @@ namespace ApiREST.Controllers
 // var result = await queries.GetAllOffers();
 // return Ok(result);
         }
+
+
+        [HttpPost]
+        public void Post(Data data)
+        {
+
+        }
+    }
+
+
+    public class Data
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
 

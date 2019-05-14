@@ -1,0 +1,12 @@
+<Page class="page"
+    actionBarHidden="true"
+    loaded="onPageLoaded"
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <StackLayout>
+        <Button text="To Map" tap="toMap" />
+        <Button text="To User Profile" tap="toUserProfile" />
+        <Button text="Enable GPS Location" tap="enableGpsLocation" />
+        <Button text="Get GPS Location" tap="getGpsLocation" />
+    </StackLayout>
+</Page>

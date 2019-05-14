@@ -1,9 +1,12 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using ServicesQueries.DTO;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using Infrastructure.Entities;
 
 namespace ServicesQueries
 {
@@ -26,6 +29,7 @@ namespace ServicesQueries
         public async Task<IEnumerable<Offer>> GetAllOffers()
         {
             var result = await context.Offers.ToListAsync();
+
             var mapped = mapper.Map<IEnumerable<Offer>>(result);
 
             return mapped;
