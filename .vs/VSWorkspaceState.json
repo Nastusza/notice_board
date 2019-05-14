@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Backend",
+    "\\Backend\\ApiREST",
+    "\\Backend\\ApiREST\\Controllers",
+    "\\Backend\\ServicesQuery",
+    "\\Backend\\ServicesQuery\\DTO"
+  ],
+  "SelectedNode": "\\Backend\\ServicesQuery\\DTO\\Offer.cs",
+  "PreviewInSolutionExplorer": false
+}
