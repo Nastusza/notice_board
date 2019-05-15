@@ -3,7 +3,6 @@ import { EventData, NavigatedData, Page } from 'tns-core-modules/ui/page/page';
 import NavigationService from '~/services/navigation-service';
 import { OffersService } from '~/services/offers-service';
 import { Offer } from '~/shared/interfaces';
-import { enableLocation } from '~/services/geolocation-service';
 import { MarkerCustom } from './components/marker-custom';
 
 const ViewModel = require("./map-module");
@@ -13,8 +12,6 @@ let vm = new ViewModel();
 export function onNavigatingTo(args: NavigatedData) {
     const page = <Page>args.object;
     page.bindingContext = vm;
-
-    enableLocation();
 }
 
 export function navigateHome(args: EventData) {

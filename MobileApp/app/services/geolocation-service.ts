@@ -1,5 +1,5 @@
-var geolocation = require("nativescript-geolocation");
 import { Accuracy } from 'tns-core-modules/ui/enums'
+import * as geolocation from 'nativescript-geolocation'
 
 export function  enableLocation() {
     geolocation.isEnabled().then(function (isEnabled) {
@@ -14,7 +14,7 @@ export function  enableLocation() {
     });
 }
 
-export function getLocation(): Promise<Location> {
+export function getLocation(): Promise<geolocation.Location> {
     return geolocation.getCurrentLocation({
         desiredAccuracy: Accuracy.any
     });

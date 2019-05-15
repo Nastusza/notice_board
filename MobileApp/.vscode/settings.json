@@ -1,16 +1,11 @@
 {
     "files.exclude": {
-        "**/*.d.ts": true,
-        "**/*.js": true,
-        "hooks": true,
-        "**/package-lock.json": true,
-        "platforms": true,
-        ".editorconfig": true,
-        "tsconfig.json": true,
-        "jsconfig.json": true,
-        "webpack.config.js": true,
-        ".gitignore": true,
-        "**/package.json": true,
-        // "app/App_Resources": true
-    }
+        "schema": true
+    },
+    "xml.fileAssociations": [
+        {
+            "systemId": "c:\\VSProjects\\NoticeBoard\\MobileApp\\schema\\tns.xsd",
+            "pattern": "**/**/*.xml"
+        }
+    ]
 }
