@@ -1,12 +1,10 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using ServicesQueries.DTO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Infrastructure.Entities;
 
 namespace ServicesQueries
 {
@@ -26,9 +24,12 @@ namespace ServicesQueries
             mapper = new Mapper(config);
         }
 
-        public async Task<IEnumerable<Offer>> GetAllOffers()
+        public async Task<IEnumerable<Offer>> GetAllOffersAsync(OffersRequest request)
         {
-            var result = await context.Offers.ToListAsync();
+            var result = await context.Offers
+                .Where(o => o.Lat >= request.LatMin && o.Lat <= request.LatMax)
+                .Where(o => o.Lng >= request.LngMin && o.Lng <= request.LngMax)
+                .ToListAsync();
 
             var mapped = mapper.Map<IEnumerable<Offer>>(result);
 

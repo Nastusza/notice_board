@@ -1,48 +1,34 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using Infrastructure.Entities;
-using Remotion.Linq.Clauses.ResultOperators;
+using ServicesQueries.DTO;
+using System;
 
 namespace ServicesQueries.DTO
 {
     public class Offer
     {
-     //  public Guid Id { get; set; }
+       public Guid Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-<<<<<<< HEAD
         public decimal Price { get; set; }
         public DateTime CreationData { get; set; }
         public DateTime ExpirationDate { get; set; }
         public bool Negotiable { get; set; }
-        public double latMin { get; set; }
-        public double latMax { get; set; }
-        public double lngMin { get; set; }
-        public double lngMax { get; set; }
-
-=======
-  //      public decimal? Price { get; set; }
-
         public LatLng LatLng { get; set; }
-
-        public Offer()
-        {
-            LatLng = new LatLng()
-            {
-                Lat = 11.11,
-                Lng = 12.23
-            };
-        }
->>>>>>> f3a2c61ff4349fe8eb9cb1b4391f1909cc85921c
     }
 }
 
-    internal class OfferMappings : Profile
+internal class OfferMappings : Profile
+{
+    public OfferMappings()
     {
-        public OfferMappings()
-        {
-            CreateMap<OfferEntity, Offer>();
-        }
+        CreateMap<OfferEntity, Offer>()
+            .ForMember(x => x.LatLng, opt => opt.MapFrom(model => model));
+        CreateMap<OfferEntity, LatLng>()
+            .ForMember(x => x.Lat, opt => opt.MapFrom(model => model.Lat));
+        CreateMap<OfferEntity, LatLng>()
+            .ForMember(x => x.Lng, opt => opt.MapFrom(model => model.Lng));
     }
+}
 
 

@@ -18,7 +18,12 @@ namespace Infrastructure
                     Id = Guid.NewGuid(),
                     Price = i * 100,
                     Title = $"Title {i}",
-                    UserId = Guid.Empty
+                    UserId = Guid.Empty,
+                    Lat = i,
+                    Lng = i,
+                    CreationData = DateTime.Now,
+                    ExpirationDate = DateTime.Now.AddDays(7),
+                    Negotiable = true
                 });
             }
 

@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using ServicesQueries;
 using System.Threading.Tasks;
+using ServicesQueries.DTO;
 
 namespace ApiREST.Controllers
 {
@@ -21,11 +24,11 @@ namespace ApiREST.Controllers
             var result = new List<Offer>()
             {
 
-                new Offer() { Id=1, Title = "title1", Description = "desc1", Price = 10, CreationData = DateTime.Now,
+                new Offer() { Id=Guid.NewGuid(), Title = "title1", Description = "desc1", Price = 10, CreationData = DateTime.Now,
             ExpirationDate = new DateTime(2019, 11, 10), Negotiable = false, latMin = 50, latMax = 60, lngMin = 17, lngMax = 19 },
-                new Offer() { Id=2, Title = "title2", Description = "desc2", Price = 11, CreationData = DateTime.Now,
+                new Offer() { Id=Guid.NewGuid(), Title = "title2", Description = "desc2", Price = 11, CreationData = DateTime.Now,
             ExpirationDate = new DateTime(2019, 11, 10), Negotiable = false, latMin = 50, latMax = 60, lngMin = 17, lngMax = 19 },
-                new Offer() { Id=3, Title = "title3", Description = "desc3", Price = 13, CreationData = DateTime.Now,
+                new Offer() { Id=Guid.NewGuid(), Title = "title3", Description = "desc3", Price = 13, CreationData = DateTime.Now,
             ExpirationDate = new DateTime(2019, 11, 10), Negotiable = false, latMin = 50, latMax = 60, lngMin = 17, lngMax = 19 },
             };
             return Ok(result);
