@@ -11,9 +11,9 @@ namespace ServicesQueries.DTO
         public string Title { get; set; }
         public string Description { get; set; }
 <<<<<<< HEAD
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; }
         public DateTime CreationData { get; set; }
-        public DateTime ExpirationDate { get; set; }
+        public DateTime ExpirationData { get; set; }
         public bool Negotiable { get; set; }
         public double latMin { get; set; }
         public double latMax { get; set; }
@@ -21,7 +21,7 @@ namespace ServicesQueries.DTO
         public double lngMax { get; set; }
 
 =======
-  //      public decimal? Price { get; set; }
+ 
 
         public LatLng LatLng { get; set; }
 
