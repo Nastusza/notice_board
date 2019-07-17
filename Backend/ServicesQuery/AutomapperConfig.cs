@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using ServicesQueries.DTO;
 
 namespace ServicesQueries
 {

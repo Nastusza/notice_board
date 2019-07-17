@@ -19,6 +19,7 @@ namespace Infrastructure
                     Price = i * 100,
                     Title = $"Title {i}",
                     UserId = Guid.Empty,
+<<<<<<< HEAD
                     CreationData = DateTime.Now,
                     ExpirationDate = DateTime,
                     Negotiable = bool,
@@ -26,6 +27,13 @@ namespace Infrastructure
                     latMax = double,
                     lngMin = double,
                     lngMax = double,
+=======
+                    Lat = i,
+                    Lng = i,
+                    CreationData = DateTime.Now,
+                    ExpirationDate = DateTime.Now.AddDays(7),
+                    Negotiable = true
+>>>>>>> 259871b327648976f2d67822e4bf12cc6466b45e
                 });
             }
 

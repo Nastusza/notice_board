@@ -6,6 +6,7 @@ namespace ServicesQueries
 {
     public interface IQueries
     {
-        Task<IEnumerable<Offer>> GetAllOffers();
+        Task<IEnumerable<Offer>> GetAllOffersAsync(OffersRequest request);
+
     }
 }
