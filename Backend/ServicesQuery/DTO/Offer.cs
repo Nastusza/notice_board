@@ -16,8 +16,8 @@ namespace ServicesQueries.DTO
 =======
         public decimal Price { get; set; }
 >>>>>>> 259871b327648976f2d67822e4bf12cc6466b45e
-        public DateTime CreationData { get; set; }
-        public DateTime ExpirationData { get; set; }
+        public DateTime CreationDate { get; set; }
+        public DateTime ExpirationDate { get; set; }
         public bool Negotiable { get; set; }
 <<<<<<< HEAD
         public double latMin { get; set; }

@@ -13,8 +13,8 @@ namespace Infrastructure.Entities
 <<<<<<< HEAD
         public decimal? Price { get; set; }
 <<<<<<< HEAD
-        public DateTime CreationData { get; set; }
-        public DateTime ExpirationData { get; set; }
+        public DateTime CreationDate { get; set; }
+        public DateTime ExpirationDate { get; set; }
         public bool Negotiable { get; set; }
         public double latMin { get; set; }
         public double latMax { get; set; }
@@ -24,7 +24,7 @@ namespace Infrastructure.Entities
 =======
         public double Lat { get; set; }
         public double Lng { get; set; }
-        public DateTime CreationData { get; set; }
+        public DateTime CreationDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         public bool Negotiable { get; set; }
 >>>>>>> 259871b327648976f2d67822e4bf12cc6466b45e

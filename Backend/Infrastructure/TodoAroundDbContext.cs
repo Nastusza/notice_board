@@ -20,7 +20,7 @@ namespace Infrastructure
                     Title = $"Title {i}",
                     UserId = Guid.Empty,
 <<<<<<< HEAD
-                    CreationData = DateTime.Now,
+                    CreationDate = DateTime.Now,
                     ExpirationDate = DateTime,
                     Negotiable = bool,
                     latMin = double,
@@ -30,7 +30,7 @@ namespace Infrastructure
 =======
                     Lat = i,
                     Lng = i,
-                    CreationData = DateTime.Now,
+                    CreationDate = DateTime.Now,
                     ExpirationDate = DateTime.Now.AddDays(7),
                     Negotiable = true
 >>>>>>> 259871b327648976f2d67822e4bf12cc6466b45e

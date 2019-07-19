@@ -25,10 +25,14 @@ namespace ApiREST.Controllers
 
 
         [HttpPost]
-        public void Post(Offer offer)
+        public async Task<IActionResult> Post(Offer offer)
         {
-
+            var result = await queries.PostNewOfferAsync(offer);
+            return Ok(result);
         }
+        
+
+        
     }
 }
 
